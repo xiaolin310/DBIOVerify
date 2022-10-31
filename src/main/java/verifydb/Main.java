@@ -52,9 +52,7 @@ public final class Main {
                     uuidStr);
             System.out.println("The Select sql: " + sql);
             rs = stat.executeQuery(sql);
-            if (rs == null) {
-                System.out.println("Can not get row about this uuid: " + uuidStr);
-            }
+            assert rs != null;
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String uuidRes = rs.getString("uuid");
