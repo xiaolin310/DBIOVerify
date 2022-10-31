@@ -6,7 +6,7 @@ import java.sql.*;
 public class DBConnection {
 
     private static final String dbClassName = "org.mariadb.jdbc.Driver";
-//    private static final String connStr = "jdbc:mariadb://localhost:3306/emotherearth";
+//    private static final String connStr = "jdbc:mariadb://localhost:3306/xxl_test";
 
     public static Connection getConnection(ENVConfig config) {
 

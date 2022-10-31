@@ -34,7 +34,7 @@ public final class Main {
             System.out.println("The Insert sql: " + sql);
             int rows = stat.executeUpdate(sql);
             System.out.println("Affected rows: " + rows);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             DBConnection.close(conn, stat, rs);
@@ -58,7 +58,7 @@ public final class Main {
                 String uuidRes = rs.getString("uuid");
                 System.out.println("fetch the row: " + id + ":" + uuidRes);
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             DBConnection.close(conn, stat, rs);
