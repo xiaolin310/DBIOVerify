@@ -31,6 +31,8 @@ public final class Main {
             uuid = UUID.randomUUID().toString();
             String sql = String.format("Insert into %s values(null, %s)", config.getDBTestTable(),
                     uuid);
+            System.out.println("the value of uuid: " + uuid);
+            System.out.println("The Insert sql: " + sql);
             int rows = stat.executeUpdate(sql);
             System.out.println("Affected rows: " + rows);
         } catch (SQLException e) {
@@ -49,6 +51,7 @@ public final class Main {
             stat = conn.createStatement();
             String sql = String.format("select * from %s where uuid=%s", config.getDBTestTable(),
                     uuidStr);
+            System.out.println("The Select sql: " + sql);
             rs = stat.executeQuery(sql);
             if (rs == null) {
                 System.out.println("Can not get row about this uuid: " + uuidStr);
