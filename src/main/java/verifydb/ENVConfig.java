@@ -64,7 +64,7 @@ public class ENVConfig {
 
         public Builder setDBHost(String dbHostKey) {
             String dbHostVal = System.getenv(dbHostKey);
-            if (dbHostVal.isBlank()) {
+            if (dbHostVal == null || dbHostVal.isBlank()) {
                 System.out.println(String.format("Use default DEFAULT_DB_HOST=%s", this.DBHost));
             } else {
                 this.DBHost = dbHostVal;
@@ -74,7 +74,7 @@ public class ENVConfig {
 
         public Builder setPort(String dbPortKey) {
             String portVal = System.getenv(dbPortKey);
-            if (portVal.isBlank()) {
+            if (portVal == null || portVal.isBlank()) {
                 System.out.println(String.format("Use default DEFAULT_DB_PORT=%d", this.port));
             } else {
                 this.port = Integer.parseInt(portVal);
@@ -84,7 +84,7 @@ public class ENVConfig {
 
         public Builder setUser(String userKey) {
             String userVal = System.getenv(userKey);
-            if (userVal.isBlank()) {
+            if (userVal == null || userVal.isBlank()) {
                 System.out.println(String.format("Use default DEFAULT_CONN_USER=%s", this.user));
             } else {
                 this.user = userVal;
@@ -94,7 +94,7 @@ public class ENVConfig {
 
         public Builder setPass(String passKey) {
             String passVal = System.getenv(passKey);
-            if (passVal.isBlank()) {
+            if (passVal == null || passVal.isBlank()) {
                 System.out.println(String.format("Use default DEFAULT_CONN_PASS=%s", this.pass));
             } else {
                 this.pass = passVal;
@@ -104,7 +104,7 @@ public class ENVConfig {
 
         public Builder setDBName(String dbNameKey) {
             String dbNameVal = System.getenv(dbNameKey);
-            if (dbNameVal.isBlank()) {
+            if (dbNameVal == null || dbNameVal.isBlank()) {
                 System.out.println(String.format("Use default DEFAULT_DB_NAME=%s", this.DBName));
             } else {
                 this.DBName = dbNameVal;
@@ -114,7 +114,7 @@ public class ENVConfig {
 
         public Builder setDBTestTable(String dbTableKey) {
             String dbTestTableVal = System.getenv(dbTableKey);
-            if (dbTestTableVal.isBlank()) {
+            if (dbTestTableVal == null || dbTestTableVal.isBlank()) {
                 System.out.println(String.format("Use default DEFAULT_DB_TEST_TABLE=%s", this.DBTestTable));
             } else {
                 this.DBTestTable = dbTestTableVal;
